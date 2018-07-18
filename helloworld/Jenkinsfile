@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Hello World"'
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                '''
+                sh 'echo "Ending the build process"'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                sh 'echo "Delopy Helloword" at $(date)'
+                sh 'echo "Deploy Finished" at $(date)'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                sh 'echo "Test Hello World"'
+                sh 'echo "Finish Test"'
+            }
+        }      
+
+    }
+}
