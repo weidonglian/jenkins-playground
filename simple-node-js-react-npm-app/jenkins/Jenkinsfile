@@ -19,6 +19,8 @@ pipeline {
         stage('Test') {
             steps {
                 dir('simple-node-js-react-npm-app') {
+                    sh 'pwd'
+                    sh 'ls -alh'
                     sh './jenkins/scripts/test.sh'
                 }
             }
