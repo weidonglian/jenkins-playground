@@ -19,7 +19,8 @@ pipeline {
         stage('Test') {
             steps {
                 dir('simple-node-js-react-npm-app') {
-                    sh 'bash ./jenkins/scripts/test.sh'
+                    sh 'chmod u+x ./jenkins/scripts/*.sh'
+                    sh './jenkins/scripts/test.sh'
                 }
             }
         }
