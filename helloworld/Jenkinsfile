@@ -10,6 +10,7 @@ pipeline {
                     ls -lah
                 '''
                 sh 'echo "Ending the build process"'
+                sh 'echo "Hook Github Automatic"'
             }
         }
         
